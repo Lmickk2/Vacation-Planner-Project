@@ -18,3 +18,4 @@
 
 # Then a list of events/attractions for those dates are displayed
 
+# Then recent searches will be saved in local storage
