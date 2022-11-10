@@ -10,35 +10,36 @@
 
   <body>
       <h1 class="card">Explore Miami</h1>
+
+      <p class="desc">Your one stop for all things Miami</p>
       <div id="container" class="img">
-      <p class="searchText">Search any destination in the world!</p>
+  
       <form>
-        <label for="date">Departure</label><br><br>
-        <input type="date" id="date" placeholder="Date"><br><br>
+        <label for="where" class="whereTo">What activities are you looking for?</label><br><br>
+        <input id="state" placeholder="Ex: Restaurants, Clubs, Museums" class="destination"><br><br>
+        <button class="searchBtn">Search!</button>
       </form>
 
-      <form>
-        <label for="date">Return</label><br><br>
-        <input type="date" id="date" placeholder="Date"><br><br>
-      </form>
-
-      <form>
-        <label for="where">Destination</label><br><br>
-        <input id="state" placeholder="City/State" class="destination"><br><br>
-      </form>
-
-      <div class ="demo"></div>
-
-      <button class="searchBtn">Search!</button>
-    
       </div>
+      <div class="mapBox">
+      <div id="map" a href="#map-display"></div>
+      </div>
+
+
+    
       <div class="event-container">
-        <div w-type="event-discovery" w-tmapikey="7RVCYOc2h31AD7OiKYDSBWg2UF4ZvnDk" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="simple" w-colorscheme="custom" w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="4" w-postalcode="" w-radius="25" w-city="Miami" w-period="week" w-layout="horizontal" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_3vjfe" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-latlong=""></div>
+        <div w-type="event-discovery" w-tmapikey="7RVCYOc2h31AD7OiKYDSBWg2UF4ZvnDk" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="simple" w-colorscheme="custom" w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="20" w-postalcode="" w-radius="25" w-city="Miami" w-period="week" w-layout="horizontal" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_3vjfe" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-latlong=""></div>
         </div>
+
+
         <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
 
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5WaUypcsbdA3SIksVTW4Iivnz-W9BoVs&callback=initMap"
+      defer></script>
+
       <script src="scripts.js"></script>
+
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
