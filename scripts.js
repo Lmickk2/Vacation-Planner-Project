@@ -93,10 +93,10 @@ var search = document.querySelector('.searchBtn');
 var state = document.querySelector('.destination')
 
 
-search.addEventListener('click', function(){
+/*search.addEventListener('click', function(){
   if(initMap)
   console.log("")
-})
+})*/
 
 var APIKey = "3de7f199adb168e35cb20780e93be5af";
 var current = $('.current');
@@ -147,7 +147,7 @@ function renderForecast() {
                     <div class="card-body">
                         <h4>${forecastDate.getMonth()+1}/${forecastDate.getDate()}/${forecastDate.getFullYear()}</h4>
                         <img src=${weatherIcon}>
-                        <p>Temp: ${weatherForecast[i].main.temp} &#176;C</p>
+                        <p>Temp: ${weatherForecast[i].main.temp} &#176;F</p>
                         <p>Wind: ${weatherForecast[i].wind.speed} m/s</p>
                         <p>Humidity: ${weatherForecast[i].main.humidity}%</p>
                     </div>
@@ -156,6 +156,7 @@ function renderForecast() {
             `)
 
             $(forecast).css('text-align', 'center');
+            $('.card-body').css('color', 'black');
         })
     })
 }
