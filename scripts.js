@@ -84,19 +84,43 @@ function initMap() {
           ],
         }
 
-
-    
-
 map = new google.maps.Map(document.getElementById("map"),options)
-
 }
-// var displayName = document.querySelector('.main-name');
-// var dateResult = document.querySelector('.date-list');
-// var eventResult = document.querySelector('.event');
-// var search = document.querySelector('.searchBtn');
-// var dateSelect = document.querySelector('.date');
-// var destination = document.querySelector('.destination');
 
 
-// search.addEventListener('click', function(citySearch){
 
+var search = document.querySelector('.searchBtn');
+var state = document.querySelector('.destination')
+
+
+search.addEventListener('click', function(){
+  if(initMap)
+  console.log("")
+})
+
+
+var APIKey = "3de7f199adb168e35cb20780e93be5af";
+var current = $('.current');
+var forecast = $('.projected');
+
+function renderCurrentWeather() {
+    var requestURL = `https://api.openweathermap.org/data/2.5/weather?q=Miami&units=imperial&appid=${APIKey}`;
+
+    $.ajax({
+        url: requestURL,
+        method: 'GET'
+    }).then(function(currentWeatherResponse) {
+        var weatherIcon = `https://openweathermap.org/img/w/${currentWeatherResponse.weather[0].icon}.png`;
+
+        var miamiCurrent = $(`
+            <h2>Miami</h2>
+            <p>${moment().format('dddd, MMMM D, YYYY')}</p> 
+            <img src="${weatherIcon}">
+            <p>Temperature: ${currentWeatherResponse.main.temp} °F</p>
+            <p>Wind: ${currentWeatherResponse.wind.speed} MPH</p>
+            <p>Humidity: ${currentWeatherResponse.main.humidity} \%</p>
+        `)
+        $(current).append(miamiCurrent);
+        $(current).css('text-align', 'center');
+    });
+};
