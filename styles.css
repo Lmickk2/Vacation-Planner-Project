@@ -1,4 +1,4 @@
-html { 
+html {
   background: url(./Assets/mia.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,18 +9,32 @@ html {
 body {
   color: black;
   font-size: 20px;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.current {
+    justify-content: center;
+    font-size: 17px;
+    display: flex;
+    color: yellow;
+    text-shadow: rgba(255, 255, 255, 0.432) -1px 2px 2px;
 }
 
 .card {
-font-size: 56px;
-text-shadow: rgb(255, 255, 255) -3px , 3px, 3px;
+  text-align: center;
+  padding: 15px;
+  color: yellow;
+  text-shadow: rgba(255, 255, 255, 0.432) -1px 2px 2px;
+}
+
+.explore {
+  font-size: 56px;
+  text-align: center;
 }
 
 h1 {
-  font-family: 'Nabla', cursive;
+  font-family: "Nabla", cursive;
   text-shadow: rgba(255, 255, 255, 0.568) -3px 3px 12px;
-
 }
 
 #container {
@@ -37,38 +51,33 @@ h1 {
 }
 
 #container:hover {
-box-shadow: rgb(255, 255, 255) -3px 4px 10px;
+  box-shadow: rgb(255, 255, 255) -3px 4px 10px;
 }
 
 .img {
-background-color: rgba(0, 0, 0, 0.603);
+  background-color: rgba(0, 0, 0, 0.603);
 }
 
 textarea {
-font-family: 'Ubuntu Condensed', sans-serif;
-border-radius: 8px;
-font-size: 14px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-.desc{
-font-size: 24px;
-padding-bottom: 10px;
-text-align: center;
-color: yellow;
-text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
-}
-
-.card {
+.desc {
+  font-size: 24px;
+  padding-bottom: 10px;
   text-align: center;
-  padding-top: 20px;
+  color: yellow;
+  text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
 }
 
 .whereTo {
-font-size: 24px;
-padding: 10px;
-text-align: center;
-color: yellow;
-text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
+  font-size: 24px;
+  padding: 10px;
+  text-align: center;
+  color: yellow;
+  text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
 }
 
 .destination {
@@ -88,12 +97,6 @@ text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
 .searchText {
   color: white;
   text-shadow: yellow -1px 1px 2px;
-}
-
-.event-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 25%;
 }
 
 .mapBox {
@@ -116,13 +119,42 @@ text-shadow: rgba(255, 255, 255, 0.432) -2px 2px 2px;
 .searchBtn {
   padding-left: 20px;
   padding-right: 20px;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: "Ubuntu Condensed", sans-serif;
   text-align: center;
   border-radius: 20px;
   font-size: 20px;
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .searchBtn:hover {
-box-shadow: rgba(255, 255, 0, 0.555) 0px 2px 3px;
+  box-shadow: rgba(255, 255, 0, 0.555) 0px 2px 3px;
+}
+
+.weather-box {
+  text-align: center;
+  font-size: 14px;
+  color: yellow;
+  text-shadow: rgba(255, 255, 255, 0.432) -1px 2px 2px;
+  text-align: center;
+}
+
+.projected {
+  display: inline-flex;
+}
+
+.local {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
