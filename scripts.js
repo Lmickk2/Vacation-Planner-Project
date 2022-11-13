@@ -183,8 +183,14 @@ function renderForecast() {
 renderForecast();
 
 function renderEvents() {
-  $('.category').change(function () {
-    var categoryInput = $(this).val();
+  $('.category').on('click', function () {
+    console.log(this);
+
+    var selectedCategory = this.text;
+    $('#dropdownDefault').text(selectedCategory);
+
+    var categoryInput = $(this).data('value');
+    console.log(categoryInput)
     
     requestURL = `http://www.miamibeachapi.com/rest/a.pi/events/search?lat=25.7602&lng=-80.1959&radius=25&category_filter=${categoryInput}`;
 
@@ -197,8 +203,10 @@ function renderEvents() {
       if (miamiEvents.length !== 0) {
         $.each(miamiEvents, function(i) {
           $('.eventsList').append(`
-            <li>
-                <a href="${miamiEvents[i].event_url}" target="_blank" class="eventURL"><h4 class=eventName>${miamiEvents[i].name}</h4></a>
+            <li class="eventItem">
+                <a href="${miamiEvents[i].event_url}" target="_blank" class="eventURL">
+                  <h4 class=eventName>${miamiEvents[i].name}</h4>
+                </a>
                 <p class="text-white eventDescription">${miamiEvents[i].description}</p>
             </li>
             `);
@@ -216,3 +224,40 @@ function renderEvents() {
   
 renderEvents();
 
+$(document).on('click', '.eventURL', function() {
+  console.log(this.text)
+  console.log(this.href)
+  
+  var events = []
+  var eventItem = {
+    eventName: this.text,
+    eventURL: this.href
+  };
+  
+  events.push(eventItem);
+  localStorage.setItem("events", JSON.stringify(events));
+});
+
+function initEvents() {
+  var storedEvents = JSON.parse(localStorage.getItem('events'));
+
+  if (storedEvents !== null) {
+    events = storedEvents;
+  } else {
+    events = [];
+  }
+
+  for (var i = 0; i < events.length; i++) {
+    var eventItem = events[i];
+
+    $('.pastInterest').append(`
+        <li class="eventItem">
+            <a href="${eventItem.eventURL}" target="_blank" class="eventURL">
+              <h4 class=eventName>${eventItem.eventName}</h4>
+            </a>
+        </li>
+    `); 
+  };
+};    
+
+initEvents();
