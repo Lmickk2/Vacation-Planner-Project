@@ -158,3 +158,18 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.eventsList {
+  list-style: none;
+}
+
+.eventName {
+  font-size: 20px;
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+.eventDescription {
+  font-size: 15px;
+  color: rgb(29, 203, 203);
+}

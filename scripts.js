@@ -154,8 +154,7 @@ function renderForecast() {
 
   $.get(requestURL).then(function(forecastResponse){
       weatherForecast = forecastResponse.list;
-      //console.log(weatherForecast);
-
+      /*console.log(weatherForecast);*/
       $.each(weatherForecast, function(i) {
           if (!weatherForecast[i].dt_txt.includes('12:00:00')) {
               return;
@@ -166,7 +165,7 @@ function renderForecast() {
 
           forecast.append(`
           <div class="col-md">
-              <div class="card text-white">
+              <div class="card">
                   <div class="card-body">
                       <h4>${forecastDate.getMonth()+1}/${forecastDate.getDate()}/${forecastDate.getFullYear()}</h4>
                       <img src=${weatherIcon}>
@@ -182,3 +181,38 @@ function renderForecast() {
 }
 
 renderForecast();
+
+function renderEvents() {
+  $('.category').change(function () {
+    var categoryInput = $(this).val();
+    
+    requestURL = `http://www.miamibeachapi.com/rest/a.pi/events/search?lat=25.7602&lng=-80.1959&radius=25&category_filter=${categoryInput}`;
+
+    $.get(requestURL).then(function(eventsResponse) {
+      var eventsList = JSON.parse(eventsResponse);
+      var miamiEvents = eventsList.events;
+      $('.eventsList').empty();
+
+        
+      if (miamiEvents.length !== 0) {
+        $.each(miamiEvents, function(i) {
+          $('.eventsList').append(`
+            <li>
+                <a href="${miamiEvents[i].event_url}" target="_blank" class="eventURL"><h4 class=eventName>${miamiEvents[i].name}</h4></a>
+                <p class="text-white eventDescription">${miamiEvents[i].description}</p>
+            </li>
+            `);
+        });
+      }else{
+        $('.eventsList').append(`
+          <li>
+            <p>Sorry, no events in this category is currently happening. Please try a different category</p>
+          </li>
+        `);
+      };
+    });
+  });
+};
+  
+renderEvents();
+
