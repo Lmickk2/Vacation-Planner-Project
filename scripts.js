@@ -224,11 +224,9 @@ function renderEvents() {
   
 renderEvents();
 
+var events = [];
+
 $(document).on('click', '.eventURL', function() {
-  console.log(this.text)
-  console.log(this.href)
-  
-  var events = []
   var eventItem = {
     eventName: this.text,
     eventURL: this.href
@@ -236,6 +234,14 @@ $(document).on('click', '.eventURL', function() {
   
   events.push(eventItem);
   localStorage.setItem("events", JSON.stringify(events));
+
+  $('.pastInterest').append(`
+        <li class="eventItem">
+            <a href="${eventItem.eventURL}" target="_blank" class="eventURL">
+              <h4 class=eventName>${eventItem.eventName}</h4>
+            </a>
+        </li>
+    `);
 });
 
 function initEvents() {
