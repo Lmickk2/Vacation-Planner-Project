@@ -29,9 +29,9 @@ THEN the saved events persist
 - More into the beach? Scroll down to the Events in Miami Beach section and select your search criteria to be presented with a list of local events happening now!
 - Click on one of these events to save it for future reference.
 - Check out the weekly forecast near the bottom of the page.
-- Click through bigger events in Miami by using the TicketMaster widget located at the bottom of the page.
+- Click through bigger events in Miami by using the TicketMaster widget located at the bottom of the page
 
-<img src="./Assets/Ex.png">
+<img src="./Assets/Example.png">
 
 ## Credits
 
