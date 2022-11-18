@@ -1,8 +1,8 @@
 # Vactaion Planner: Explore Miami
+
 ## Description
 We created a dashboard for potential visitors to the city of Miami. The dashboard includes a display of Miami’s current weather (accompanied by a 5-day forecast), a list of local attractions and events, as well as other details a tourist would want/need to know about the Magic city. The user can search for an event and generate suggestions to local events via a drop-down menu. This application runs in the browser and features dynamic HTML, CSS, JavaScript, third-party APIs, JQuery,  Bootstrap, Moment.js, and localStorage
 
-```md
 # User story
 AS a tourist in Miami,
 I WANT to be able to easily view the weather, a map of local attractions in the area, and current local events
@@ -20,25 +20,25 @@ WHEN I click on an event name
 THEN the event name and link is saved in local Storage
 WHEN I refresh the page
 THEN the saved events persist
-```
+
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+- Navigate to the map that is centered around the famous Brickell, Miami area.
+- Scroll around and find destinations that interest you.
+- More into the beach? Scroll down to the Events in Miami Beach section and select your search criteria to be presented with a list of local events happening now!
+- Click on one of these events to save it for future reference.
+- Check out the weekly forecast near the bottom of the page.
+- Click through bigger events in Miami by using the TicketMaster widget located at the bottom of the page.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+<img src="./Assets/Ex.png">
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Luke Mickan - https://github.com/Lmickk2
+Monica Pong - https://github.com/monicapong
+Alexa McKinnis - https://github.com/alexarenee
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 ## License
 
